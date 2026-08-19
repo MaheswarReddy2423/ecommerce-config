@@ -26,6 +26,12 @@ resilience4j:
         max-concurrent-calls: 2
         max-wait-duration: 0s
 
+  timelimiter:
+    instances:
+      customerServiceTimeLimiter:
+        timeout-duration: 3s
+        cancel-running-future: true
+
 logging:
   level:
     io.github.resilience4j.retry: DEBUG
