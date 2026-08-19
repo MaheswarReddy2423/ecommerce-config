@@ -20,6 +20,11 @@ resilience4j:
         limit-for-period: 2
         limit-refresh-period: 30s
         timeout-duration: 0s
+  bulkhead:
+    instances:
+      customerServiceBulkhead:
+        max-concurrent-calls: 2
+        max-wait-duration: 0s
 
 logging:
   level:
