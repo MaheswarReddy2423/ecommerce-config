@@ -1,0 +1,10 @@
+resilience4j:
+  retry:
+    instances:
+      productServiceRetry:
+        max-attempts: 3
+        wait-duration: 2s
+
+logging:
+  level:
+    io.github.resilience4j.retry: DEBUG
