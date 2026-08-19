@@ -6,7 +6,14 @@ resilience4j:
         wait-duration: 2s
       productServiceRateLimiter:
         limit-for-period: 5
-        limit-refresh-period: 10s
+        limit-refresh-period: 20s
+        timeout-duration: 0s
+      customerServiceRetry:
+        max-attempts: 3
+        wait-duration: 2s
+      customerServiceRateLimiter:
+        limit-for-period: 5
+        limit-refresh-period: 20s
         timeout-duration: 0s
 
 logging:
