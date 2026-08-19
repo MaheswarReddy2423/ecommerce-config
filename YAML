@@ -12,13 +12,13 @@ resilience4j:
   ratelimiter:
     instances:
       productServiceRateLimiter:
-        limit-for-period: 5
-        limit-refresh-period: 20s
+        limit-for-period: 2
+        limit-refresh-period: 30s
         timeout-duration: 0s
 
       customerServiceRateLimiter:
-        limit-for-period: 5
-        limit-refresh-period: 20s
+        limit-for-period: 2
+        limit-refresh-period: 30s
         timeout-duration: 0s
 
 logging:
