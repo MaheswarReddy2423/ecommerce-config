@@ -4,6 +4,10 @@ resilience4j:
       productServiceRetry:
         max-attempts: 3
         wait-duration: 2s
+      productServiceRateLimiter:
+        limit-for-period: 5
+        limit-refresh-period: 10s
+        timeout-duration: 0s
 
 logging:
   level:
