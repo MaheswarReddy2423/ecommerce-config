@@ -4,16 +4,18 @@ resilience4j:
       productServiceRetry:
         max-attempts: 3
         wait-duration: 2s
-      
+
       customerServiceRetry:
         max-attempts: 3
         wait-duration: 2s
+
   ratelimiter:
     instances:
       productServiceRateLimiter:
         limit-for-period: 5
         limit-refresh-period: 20s
         timeout-duration: 0s
+
       customerServiceRateLimiter:
         limit-for-period: 5
         limit-refresh-period: 20s
@@ -22,3 +24,4 @@ resilience4j:
 logging:
   level:
     io.github.resilience4j.retry: DEBUG
+    io.github.resilience4j.ratelimiter: DEBUG
