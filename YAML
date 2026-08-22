@@ -1,3 +1,9 @@
+circuitbreaker:
+    instances:
+      customerservice:
+        ignore-exceptions:
+          - com.example.OrderService.GlobalExceptionHandler.CustomerNotFoundException
+
 resilience4j:
   retry:
     instances:
@@ -8,8 +14,10 @@ resilience4j:
       customerServiceRetry:
         max-attempts: 3
         wait-duration: 2s
+        ignore-exceptions:
+          - com.example.OrderService.GlobalExceptionHandler.CustomerNotFoundException
 
-  ratelimiter:
+ratelimiter:
     instances:
       productServiceRateLimiter:
         limit-for-period: 2
@@ -20,13 +28,13 @@ resilience4j:
         limit-for-period: 2
         limit-refresh-period: 30s
         timeout-duration: 0s
-  bulkhead:
+bulkhead:
     instances:
       customerServiceBulkhead:
         max-concurrent-calls: 2
         max-wait-duration: 0s
 
-  timelimiter:
+timelimiter:
     instances:
       customerServiceTimeLimiter:
         timeout-duration: 3s
