@@ -3,6 +3,9 @@ circuitbreaker:
       customerservice:
         ignore-exceptions:
           - com.example.OrderService.GlobalExceptionHandler.CustomerNotFoundException
+      productservice:
+        ignore-exceptions:
+        - com.example.OrderService.GlobalExceptionHandler.ProductNotFoundException
 
 resilience4j:
   retry:
@@ -10,6 +13,7 @@ resilience4j:
       productServiceRetry:
         max-attempts: 3
         wait-duration: 2s
+          - com.example.OrderService.GlobalExceptionHandler.ProductNotFoundException
 
       customerServiceRetry:
         max-attempts: 3
