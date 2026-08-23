@@ -17,12 +17,12 @@ resilience4j:
       customerServiceRetry:
         max-attempts: 3
         wait-duration: 2s
+        ignore-exceptions:
+          - com.example.OrderService.GlobalExceptionHandler.CustomerNotFoundException
 
      paymentServiceRetry:
         max-attempts: 3
         wait-duration: 2s
-        ignore-exceptions:
-          - com.example.OrderService.GlobalExceptionHandler.CustomerNotFoundException
 
 ratelimiter:
     instances:
